@@ -45,22 +45,22 @@ class CommandConfig extends React.Component<{}, any> {
     }
     
     if (!this.state.username) {
-      alert('invalid username. plz fix ur shit');
+      alert('invalid username. plz fix ur sh*t');
       return;
     }
     
     if (!this.state.password) {
-      alert('invalid password. plz fix ur shit');
+      alert('invalid password. plz fix ur sh*t');
       return;
     }
     
     if (!this.state.command) {
-      alert('invalid command. plz fix ur shit');
+      alert('invalid command. plz fix ur sh*t');
       return;
     }
 
     if (!this.state.message) {
-      alert('invalid message. plz fix ur shit');
+      alert('invalid message. plz fix ur sh*t');
       return;
     }
 
@@ -72,7 +72,7 @@ class CommandConfig extends React.Component<{}, any> {
     localStorage.setItem('userInfo', JSON.stringify(this.state));
     const channels = this.state.channels.toLocaleLowerCase().replaceAll(' ','').split(',');
     if (channels.length < 1) {
-      alert('invalid channel list. plz fix ur shit');
+      alert('invalid channel list. plz fix ur sh*t');
       return;
     }
 
@@ -296,7 +296,7 @@ class CommandConfig extends React.Component<{}, any> {
       try {
         fs.readFileSync(filePath, 'utf8');
       } catch (e) {
-        alert(`invalid file path for ${filePath}. plz fix ur shit`);
+        alert(`invalid file path for ${filePath}. plz fix ur sh*t`);
         return false;
       }
     }
