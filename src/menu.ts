@@ -266,7 +266,7 @@ export default class MenuBuilder {
             label: 'paypal: bot.jro@gmail.com',
             click() {
               shell.openExternal(
-                'https://paypal.com/'
+                'http://paypal.me/botjro'
               );
             },
           },

@@ -18,6 +18,6 @@ connect to multiple twitch chats in order to share commands!
 - report issues through the issues tab. don't @ me.
 
 ### donations
-- venmo - @jro_bot
-- paypal - http://paypal.me/botjro
+- venmo - [@jro_bot](https://venmo.com/jro_bot)
+- paypal - [paypal.me/botjro](http://paypal.me/botjro)
 - bitcoin address - bc1q2lt90zwmal6m8vvsn07kqnvqtptfvlwrj8wp8g

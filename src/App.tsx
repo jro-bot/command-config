@@ -282,7 +282,7 @@ class CommandConfig extends React.Component<{}, any> {
           <br /><br />
         </div>
         <span>
-          <strong>donations:</strong> venmo - @jro_bot // paypal - bot.jro@gmail.com // bitcoin address - bc1q2lt90zwmal6m8vvsn07kqnvqtptfvlwrj8wp8g
+          <strong>donations:</strong> venmo - <a target="_blank" href="https://venmo.com/jro_bot">@jro_bot</a> // paypal - <a target="_blank" href="http://paypal.me/botjro">paypal.me/botjro</a> // bitcoin address - bc1q2lt90zwmal6m8vvsn07kqnvqtptfvlwrj8wp8g
         </span>
       </div>
     )
