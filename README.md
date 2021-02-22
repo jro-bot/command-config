@@ -19,5 +19,5 @@ connect to multiple twitch chats in order to share commands!
 
 ### donations
 - venmo - @jro_bot
-- paypal - bot.jro@gmail.com
+- paypal - http://paypal.me/botjro
 - bitcoin address - bc1q2lt90zwmal6m8vvsn07kqnvqtptfvlwrj8wp8g
