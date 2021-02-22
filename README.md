@@ -14,6 +14,9 @@ connect to multiple twitch chats in order to share commands!
 ### read directions & plz fix ur sh*t
 :3
 
+### contact
+- report issues through the issues tab. don't @ me.
+
 ### donations
 - venmo - @jro_bot
 - paypal - bot.jro@gmail.com
