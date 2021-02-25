@@ -16,6 +16,7 @@ const fs = require('fs');
 
 const twitchRegex = /(((twitch.tv)|(www\.))[^\s]+)/g;
 const urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+const TEMP_CHANGE = '$TEMP_CHANGE';
 
 class CommandConfig extends React.Component<{}, any> {
   client: any;
@@ -105,13 +106,13 @@ class CommandConfig extends React.Component<{}, any> {
         this.client.on('message', (channel: string, tags: any, message: string, _self: boolean) => {
           if (message == this.state.command) {
             this.respondToCommand(tags.username, channel, message, '');
-          } else if ((!!this.state.command2 && !!this.state.message2) && message == this.state.command2) {
+          } else if ((!!this.state.command2 && !!this.state.message2) && this._messageMatchesCommand(message, this.state.command2)) {
             this.respondToCommand(tags.username, channel, message, '2');
-          } else if ((!!this.state.command3 && !!this.state.message3) && message == this.state.command3) {
+          } else if ((!!this.state.command3 && !!this.state.message3) && this._messageMatchesCommand(message, this.state.command3)) {
             this.respondToCommand(tags.username, channel, message, '3');
-          } else if ((!!this.state.command4 && !!this.state.message4) && message == this.state.command4) {
+          } else if ((!!this.state.command4 && !!this.state.message4) && this._messageMatchesCommand(message, this.state.command4)) {
             this.respondToCommand(tags.username, channel, message, '4');
-          } else if ((!!this.state.command5 && !!this.state.message5) && message == this.state.command5) {
+          } else if ((!!this.state.command5 && !!this.state.message5) && this._messageMatchesCommand(message, this.state.command5)) {
             this.respondToCommand(tags.username, channel, message, '5');
           }
           return;
@@ -122,6 +123,10 @@ class CommandConfig extends React.Component<{}, any> {
         alert('rippp -- could not connect to twitch.');
         this.client = null;
       });
+  }
+
+  _messageMatchesCommand(message: string, command: string) {
+    return message.toLowerCase() == command.toLowerCase()
   }
 
   respondToCommand(username: string, channel: string, message: string, commandNumber: string) {
@@ -305,6 +310,13 @@ class CommandConfig extends React.Component<{}, any> {
 
   _replaceFilePathContent(message: string, pathNumber: number): string {
     const filePath = this.state[`filePath${pathNumber}`]
+    if (pathNumber == 1 && !!this.state[`filePath10`]) {
+      message = message.replace('$10', TEMP_CHANGE);
+      var content = fs.readFileSync(filePath, 'utf8');
+      message = message.replace(`$${pathNumber}`, content);
+      return message.replace(TEMP_CHANGE, '$10');
+    }
+
     if (!!filePath) {
       var content = fs.readFileSync(filePath, 'utf8');
       return message.replace(`$${pathNumber}`, content);
