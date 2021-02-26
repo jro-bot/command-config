@@ -310,7 +310,7 @@ class CommandConfig extends React.Component<{}, any> {
 
   _replaceFilePathContent(message: string, pathNumber: number): string {
     const filePath = this.state[`filePath${pathNumber}`]
-    if (pathNumber == 1 && !!this.state[`filePath10`]) {
+    if (pathNumber == 1 && !!this.state['filePath1'] && !!this.state['filePath10']) {
       message = message.replace('$10', TEMP_CHANGE);
       var content = fs.readFileSync(filePath, 'utf8');
       message = message.replace(`$${pathNumber}`, content);
