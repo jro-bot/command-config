@@ -36,7 +36,6 @@ class CommandConfig extends React.Component<{}, any> {
 
     this.state.connected = false;
     this.state.logs = [];
-    console.log('state init', this.state);
     this.client = null;
   }
 
@@ -104,7 +103,7 @@ class CommandConfig extends React.Component<{}, any> {
         this.setState({connected: true, channelsList: channels});
         
         this.client.on('message', (channel: string, tags: any, message: string, _self: boolean) => {
-          if (message == this.state.command) {
+          if (this._messageMatchesCommand(message, this.state.command)) {
             this.respondToCommand(tags.username, channel, message, '');
           } else if ((!!this.state.command2 && !!this.state.message2) && this._messageMatchesCommand(message, this.state.command2)) {
             this.respondToCommand(tags.username, channel, message, '2');

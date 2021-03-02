@@ -198,6 +198,9 @@ export default class MenuBuilder {
         label: '&File',
         submenu: [
           {
+            label: `version: 0.0.3`
+          },
+          {
             label: '&Open',
             accelerator: 'Ctrl+O',
           },

@@ -1,7 +1,7 @@
 {
   "name": "command-config",
   "productName": "command config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "configure your commands for multiple twitch channels",
   "main": "./main.prod.js",
   "author": {
